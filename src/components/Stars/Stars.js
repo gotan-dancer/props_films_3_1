@@ -1,12 +1,17 @@
 import Star from "../Star/Star";
 
 function Stars({count})
-{
+{   
+    if((count > 0) && (count <= 5))
+        return null;
+    
     return(
-        <ul class="card-body-stars">
-            {(count > 0) && (count <= 5) && Stars.map(count => <li>Star</li>);}
-        </ul>
-    )
+        Stars.map(count =>
+            <ul class="card-body-stars">
+                <li>Star</li>
+            </ul>
+        );
+    );
 
     Stars.defaultProps = {
         count: 0;
